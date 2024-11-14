@@ -141,14 +141,17 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
     if (response.ok) {
       const reportText = await response.text();
       setReportData(reportText);
+      onReportConfirmation(reportData);
     }
 
     setIsLoading(false);
   }
 
   useEffect(() => {
-    onReportConfirmation(reportData);
-  }, [onReportConfirmation, reportData]);
+    if (reportData !== null) {
+      onReportConfirmation(reportData);
+    }
+  }, [reportData]);
 
   return (
     <div className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
@@ -192,14 +195,14 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
           Modify Report Summary
         </Button>
       </fieldset>
-      <div style={{ textAlign: "center", }}>
-      AI-Medi-Assist ©{new Date().getFullYear()} Developed by{" "}
-          <a
-            className="text-[#daa611] hover:underline hover:text-[#064b9b]"
-            href="https://tonmoytalukder.github.io/"
-          >
-            Tonmoy Talukder
-          </a>
+      <div style={{ textAlign: "center" }}>
+        AI-Medi-Assist ©{new Date().getFullYear()} Developed by{" "}
+        <a
+          className="text-[#daa611] hover:underline hover:text-[#064b9b]"
+          href="https://tonmoytalukder.github.io/"
+        >
+          Tonmoy Talukder
+        </a>
       </div>
     </div>
   );

@@ -17,14 +17,14 @@ const HomeComponent = () => {
   const [reportData, setreportData] = useState("");
 
   const onReportConfirmation = (data: string) => {
-    if (data === null) {
-      return; 
-    }
     setreportData(data);
-    toast({
-      description: "Report Updated!",
-      duration: 2000,
-    });
+    if (data.length > 0) {
+      toast({
+        description: "Report Updated!",
+        duration: 2000,
+      });
+    }
+    
   };
 
   return (
