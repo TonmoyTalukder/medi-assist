@@ -48,7 +48,6 @@ const model = google('models/gemini-1.5-flash', { // gemini-1.5-pro-latest
 
 export async function POST(req: Request) {
     const reqBody = await req.json();
-    console.log(reqBody);
 
     const messages: Message[] = reqBody.messages;
     const userQuestion = `${messages[messages.length - 1].content}`;

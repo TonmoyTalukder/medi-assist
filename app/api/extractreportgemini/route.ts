@@ -11,10 +11,8 @@ export async function POST(req: Request) {
     const { base64 } = await req.json();
     const filePart = fileToGenerativePart(base64)
 
-    console.log(filePart);
     const generatedContent = await model.generateContent([prompt, filePart]);
 
-    console.log(generatedContent);
     const textResponse = generatedContent.response.candidates![0].content.parts[0].text;
     return new Response(textResponse, { status: 200 })
 }

@@ -24,6 +24,17 @@ const ChatComponent = ({ reportData }: IProps) => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === "Enter" && !event.shiftKey && input.trim()) {
+      event.preventDefault(); // Prevents adding a new line
+      handleSubmit(event, {
+        data: {
+          reportData: reportData as string,
+        },
+      });
+    }
+  }
+
   return (
     <div className="bg-muted/70 relative flex flex-col h-[90vh] rounded-xl p-4 gap-4">
       <Badge
@@ -59,6 +70,7 @@ const ChatComponent = ({ reportData }: IProps) => {
         <Textarea
           value={input}
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
           placeholder="Type your query here..."
           className="min-h-12 resize-none border-0 p-3 shadow-none "
         />

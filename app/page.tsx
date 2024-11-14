@@ -8,7 +8,9 @@ import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { Settings } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+import mediAi from './mediAi.png'
 
 const HomeComponent = () => {
   const { toast } = useToast();
@@ -25,8 +27,14 @@ const HomeComponent = () => {
   return (
     <div className="h-screen w-full overflow-hidden flex flex-col">
       <header className="sticky top-0 z-10 flex h-[100px] bg-background items-center gap-1 border-b px-4 py-4">
-        <h1 className="w-full text-xl font-semibold text-[#D90013]">
-          <span className="flex flex-row">Medi Assist</span>
+        <h1 className="flex flex-row items-center gap-4 w-full text-xl font-semibold text-[#D90013]">
+          <Image
+            src={mediAi}
+            alt="Description of image"
+            width={30}
+            height={30}
+          />
+          <span className="flex flex-row">AI Medi Assist</span>
         </h1>
         <div className="flex flex-row justify-end gap-2">
           <ModeToggle />

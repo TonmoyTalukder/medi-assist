@@ -57,7 +57,6 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
           reader.onloadend = () => {
             const base64String = reader.result as string;
             setBase64Data(base64String);
-            console.log(base64String);
           };
 
           reader.readAsDataURL(compressedFile);
@@ -70,7 +69,6 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
         reader.onloadend = () => {
           const base64String = reader.result as string;
           setBase64Data(base64String);
-          console.log(base64String);
         };
 
         reader.readAsDataURL(file);
@@ -142,7 +140,6 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
 
     if (response.ok) {
       const reportText = await response.text();
-      console.log(reportText);
       setReportData(reportText);
     }
 

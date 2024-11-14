@@ -1,7 +1,9 @@
 import { Message } from "ai";
 import React from "react";
 import MessageBox from "./messageBox";
-import {Loader2} from "lucide-react";
+import { Loader2 } from "lucide-react";
+import Image from "next/image";
+import aiLoad from "../app/aiLoad.gif";
 
 type IProps = {
   messages: Message[];
@@ -14,10 +16,25 @@ const Messages = ({ messages, isLoading }: IProps) => {
       {messages.map((m, index) => (
         <MessageBox key={index} role={m.role} content={m.content} />
       ))}
-      
+
+{/* <Image
+            src={aiLoad}
+            alt="Description of animation"
+            width={30}
+            height={30}
+            unoptimized // Disable optimization to preserve animation
+          /> */}
+
       {isLoading && (
-        <div className="flex justify-center items-center text-muted-foreground text-sm">
-          <Loader2 className="mr-2 size-3.5 animate-spin" /> AI is processing your query...
+        <div className="flex flex-row gap-2 justify-center items-center text-muted-foreground text-sm">
+          AI Medi Assist is processing{" "}
+          <Image
+            src={aiLoad}
+            alt="Description of animation"
+            width={30}
+            height={30}
+            unoptimized // Disable optimization to preserve animation
+          />
         </div>
       )}
     </div>

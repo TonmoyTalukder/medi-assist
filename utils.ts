@@ -15,7 +15,6 @@ export async function queryPineconeVectorStore(
     model: "mixedbread-ai/mxbai-embed-large-v1",
     inputs: query,
   });
-  console.log(apiOutput);
   
   const queryEmbedding = Array.from(apiOutput);
   const index = client.Index(indexName);
@@ -25,8 +24,6 @@ export async function queryPineconeVectorStore(
     includeMetadata: true,
     includeValues: false
   });
-
-  console.log(queryResponse);
   
 
   if (queryResponse.matches.length > 0) {
