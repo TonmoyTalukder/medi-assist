@@ -138,6 +138,8 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
       }),
     });
 
+    console.log("Response: ", response)
+
     if (response.ok) {
       const reportText = await response.text();
       setReportData(reportText);
