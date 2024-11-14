@@ -17,6 +17,9 @@ const HomeComponent = () => {
   const [reportData, setreportData] = useState("");
 
   const onReportConfirmation = (data: string) => {
+    if (data === null) {
+      return; 
+    }
     setreportData(data);
     toast({
       description: "Report Updated!",
