@@ -36,7 +36,7 @@ const ChatComponent = ({ reportData }: IProps) => {
   }
 
   return (
-    <div className="bg-muted/70 relative flex flex-col h-[90vh] rounded-xl p-4 gap-4">
+    <div className="bg-muted/70 relative flex flex-col h-[88vh] md:h-[90vh] rounded-xl p-4 gap-4">
       <Badge
         variant={"outline"}
         className={`absolute right-3 top-1.5 text-base ${reportData && "bg-[#00B612]"}`}

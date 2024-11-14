@@ -192,6 +192,15 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
           Modify Report Summary
         </Button>
       </fieldset>
+      <div style={{ textAlign: "center", }}>
+      AI-Medi-Assist ©{new Date().getFullYear()} Developed by{" "}
+          <a
+            className="text-[#daa611] hover:underline hover:text-[#064b9b]"
+            href="https://tonmoytalukder.github.io/"
+          >
+            Tonmoy Talukder
+          </a>
+      </div>
     </div>
   );
 };

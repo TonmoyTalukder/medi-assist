@@ -62,7 +62,7 @@ const HomeComponent = () => {
         <div className="hidden md:flex flex-col">
           <ReportComponent onReportConfirmation={onReportConfirmation} />
         </div>
-        <div className="lg:col-span-2">
+        <div className="mt-5 md:mt-0 lg:col-span-2">
           <ChatComponent reportData={reportData} />
         </div>
       </main>
