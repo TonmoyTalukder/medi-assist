@@ -33,7 +33,7 @@ const ChatComponent = ({ reportData }: IProps) => {
         {reportData ? "✓ Report Added" : "No Report Added"}
       </Badge>
 
-      <div className="flex-1 mb-10 overflow-y-auto max-h-[calc(100vh-150px)] p-4">
+      <div className="flex-1 mb-10 overflow-y-auto max-h-[calc(100vh-150px)] p-4 mt-2">
         <Messages messages={messages} isLoading={isLoading} />
         <div ref={messagesEndRef} /> {/* Marker to auto-scroll */}
       </div>
