@@ -1,7 +1,6 @@
 import { Message } from "ai";
 import React from "react";
 import MessageBox from "./messageBox";
-import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import aiLoad from "../app/aiLoad.gif";
 
