@@ -137,9 +137,7 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
         base64: base64Data,
       }),
     });
-
-    console.log("Response: ", response)
-
+    
     if (response.ok) {
       const reportText = await response.text();
       setReportData(reportText);
