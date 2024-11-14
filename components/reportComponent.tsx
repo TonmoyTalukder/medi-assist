@@ -148,7 +148,7 @@ const ReportComponent = ({ onReportConfirmation }: IProps) => {
 
   useEffect(() => {
     onReportConfirmation(reportData);
-  }, [reportData]);
+  }, [onReportConfirmation, reportData]);
 
   return (
     <div className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
