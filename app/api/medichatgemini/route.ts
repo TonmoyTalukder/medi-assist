@@ -13,7 +13,7 @@ export const maxDuration = 60;
 
 const google = createGoogleGenerativeAI({
     baseURL: 'https://generativelanguage.googleapis.com/v1beta',
-    apiKey: process.env.GEMINI_API_KEY
+    apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY
 });
 
 const model = google('models/gemini-1.5-flash', { // gemini-1.5-pro-latest
